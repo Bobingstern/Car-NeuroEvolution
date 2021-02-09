@@ -17,7 +17,7 @@ class Car{
 
 
   this.data = []
-  this.color = [255, 0, 0]
+  this.color = [round(random(255)), round(random(255)), round(random(255))]
   this.brain = new NeuralNetwork(7, 7, 3)
   this.ded = false;
   this.on = 0
@@ -99,7 +99,7 @@ class Car{
 
     pop();
 
-    
+
 
     for (var i=0;i<this.all_collisions.length;i++){
       if (this.all_collisions[i][0] != -1){
@@ -175,13 +175,15 @@ class Car{
 
     for (var x=0;x<this.map.length;x++){
       var point = this.map[x]
+      var na = 0
       for (var i=0;i<this.sensors.length;i++){
         var sen = this.sensors[i]
 
         var hit = collideLineLine(point[0], point[1], point[2], point[3], sen[0], sen[1], sen[2], sen[3], true);
-        if (hit.x != false){
+        if (hit.x != false && na < 5){
           //background(150)
           this.all_collisions.push([hit.x, hit.y])
+          na++
 
         }
         else{
@@ -248,11 +250,11 @@ class Car{
       this.collision()
       this.Fitness()
       if (this.crash_detection() || this.da > 100){
-        this.color = [0, 0, 0]
+        //this.color = [0, 0, 0]
         this.ded = true
       }
       else{
-        this.color = [255, 0, 0]
+        //this.color = [255, 0, 0]
 
       }
     }
