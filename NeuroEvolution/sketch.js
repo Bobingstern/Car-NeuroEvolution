@@ -1,5 +1,5 @@
 let cars = [];
-let pop_size = 300
+let pop_size = 200
 let g = 0
 function setup() {
   // put setup code here
@@ -64,7 +64,7 @@ function New_Population(){
       best_index = i
     }
   }
-  console.log(cars[best_index].fitness)
+  //console.log(cars[best_index].fitness)
   let best_nn = cars[best_index].brain.copy()
   let hehe = cars[best_index].color
   for (var i=0;i<pop_size;i++){
@@ -74,6 +74,9 @@ function New_Population(){
     car.color = [hehe[0]+random(-50, 50), hehe[1]+random(-50, 50), hehe[2]+random(-50, 50)]
     cars[i] = car
   }
+  let car = new Car(1000, 200)
+  car.brain = best_nn.copy()
+  cars.push(car)
 
 
 
