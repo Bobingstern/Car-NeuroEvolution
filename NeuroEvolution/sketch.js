@@ -76,7 +76,7 @@ function New_Population(){
   }
   let car = new Car(1000, 200)
   car.brain = best_nn.copy()
-  cars.push(car)
+  cars[cars.length-1] = car
 
 
 
