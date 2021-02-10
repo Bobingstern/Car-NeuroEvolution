@@ -18,7 +18,7 @@ class Car{
 
   this.data = []
   this.color = [round(random(255)), round(random(255)), round(random(255))]
-  this.brain = new NeuralNetwork(7, 7, 3)
+  this.brain = new NeuralNetwork(7, round(random(7, 30)), 3)
   this.ded = false;
   this.on = 0
   this.fitness = 0
@@ -282,6 +282,10 @@ class Car{
           this.fitness++
           //console.log('pooggerr')
           this.on++
+
+          if (this.on > this.reward_gates.length-1){
+            this.on = 0
+          }
 
         }
 
