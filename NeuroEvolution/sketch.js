@@ -5,7 +5,7 @@ function setup() {
   // put setup code here
   createCanvas(window.innerWidth, window.innerHeight);
   for (var i=0;i<pop_size;i++){
-    let car = new Car(1000, 200)
+    let car = new Car(1100, 200)
     cars[i] = car
   }
 
