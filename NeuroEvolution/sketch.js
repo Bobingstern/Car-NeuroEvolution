@@ -5,7 +5,7 @@ function setup() {
   // put setup code here
   createCanvas(window.innerWidth, window.innerHeight);
   for (var i=0;i<pop_size;i++){
-    let car = new Car(1100, 200)
+    let car = new Car(1200, 200)
     cars[i] = car
   }
 
@@ -68,13 +68,13 @@ function New_Population(){
   let best_nn = cars[best_index].brain.copy()
   let hehe = cars[best_index].color
   for (var i=0;i<pop_size;i++){
-    let car = new Car(1000, 200)
+    let car = new Car(1200, 200)
     car.brain = best_nn.copy()
     car.brain.mutate(0.15)
     car.color = [hehe[0]+random(-50, 50), hehe[1]+random(-50, 50), hehe[2]+random(-50, 50)]
     cars[i] = car
   }
-  let car = new Car(1000, 200)
+  let car = new Car(1200, 200)
   car.brain = best_nn.copy()
   cars[cars.length-1] = car
 
